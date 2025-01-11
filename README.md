@@ -53,7 +53,7 @@ This repository is designed for developers and Salesforce admins who want to:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/IAm-RoyAnirban/Salesforce-File-System.git
+   git clone https://github.com/IAm-RoyAnirban/Salesforce-Files-System.git
 
 ---
 
