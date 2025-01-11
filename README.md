@@ -8,7 +8,8 @@
 Explore how Salesforce manages files using the **ContentDocument**, **ContentVersion**, and **ContentDocumentLink** objects. This repository includes detailed resources and examples from my YouTube demonstration.
 
 ### 🎥 Watch the Video Tutorial to learn more:
-YouTube: [Mastering Salesforce File Management System with Practical Use Cases](https:www.google.com)
+YouTube: [Master Salesforce File Management with Real-World Use Cases for Apex Triggers, SOQL, and Flows](https:www.google.com)
+
 
 ---
 
