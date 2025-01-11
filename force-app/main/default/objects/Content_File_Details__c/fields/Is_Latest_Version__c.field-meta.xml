@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Latest_Version__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Whether the current file is the latest version.</description>
+    <inlineHelpText>Whether the current file is the latest version.</inlineHelpText>
+    <label>Is Latest Version?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
