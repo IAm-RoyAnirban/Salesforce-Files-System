@@ -1,65 +1,64 @@
-# Salesforce - Upload Multipart-Form Data Using Apex Trigger
-This project demonstrates how to upload multipart-form data using an Apex Trigger in Salesforce to seamlessly integrate with Google Drive and OpenAI Vector Store simultaneously.
+# Understanding the Salesforce File System 📂
 
-### Watch the video demo to learn more:
-##### [Perform Multipart-Form Data Uploads Using Apex Trigger to Google Drive or OpenAI Vector Store in Salesforce](https://youtu.be/qmmNRoPDz5w)
+<img 
+  src="https://raw.githubusercontent.com/IAm-RoyAnirban/Salesforce-Files-System/refs/heads/main_branch/assets/salesforce-file-system-relationships-diagram.gif" alt="Salesforce File System Object Relationships Diagram" title="Salesforce File System - Object Relationships Diagram" width="65%" style="display: block; margin: 0 auto;" />
 
-### Overview
-This solution is designed for developers and Salesforce admins looking to:
+---
 
-- Automate bulk file uploads in Salesforce.
-- Handle dynamic file types (e.g., PDF, documents, images, text) efficiently.
-- Integrate Salesforce with external APIs like Google Drive and OpenAI for document storage and AI processing.
+Explore how Salesforce manages files using the **ContentDocument**, **ContentVersion**, and **ContentDocumentLink** objects. This repository includes detailed resources and examples from my YouTube demonstration.
 
-### Key Features
-- Bulkified Apex Trigger to handle large-scale operations.
-- Multipart-form data creation for API compatibility.
-- Parallel file uploads to both Google Drive and OpenAI Vector Store.
-- Support for multiple file types in a single operation.
-- API error handling and optimization for Salesforce limits.
-- Test class included.
+### 🎥 Watch the Video Tutorial to learn more:
+YouTube: [Mastering Salesforce File Management System with Practical Use Cases](https:www.google.com)
 
-## Getting Started
+---
 
-### Prerequisites
-Before using this solution, ensure that you have the following:
+## Overview
 
-- **Salesforce Developer Org**: A Salesforce Developer Edition, Scratch, or Sandbox org with API access enabled.
-- **Google Drive API Credentials**: You’ll need access to the Google Drive API and OAuth credentials to allow file uploads.
-- **OpenAI API Credentials**: Set up an API key for accessing OpenAI services (such as the Vector Store).
-- **Basic Knowledge of Salesforce Apex**: Understanding of Apex Triggers, API integrations, and asynchronous processing.
+This repository is designed for developers and Salesforce admins who want to:
 
-## Installation Steps
+- **Understand relationships** between the `ContentDocument`, `ContentVersion`, and `ContentDocumentLink` objects: their fields, usage, and purpose.
+- Learn **Apex trigger-based scenarios** using SOQL queries to handle file uploads, updates, deletions, and record associations.
+- Explore **real-world use cases**, including:
+  - Querying all related files and their versions for any record using Flows.
+  - Previewing files in a data table.
+  - Generating **secure, shareable links** with optional expiration dates and passwords for external access.
 
-### Clone the Repository
-Clone or download this repository to your Salesforce Developer Org. You will need to deploy the Apex Trigger, Apex class, and custom settings.
+---
 
-### Set Up Google Drive API
-1. Go to the [Google Developers Console](https://console.cloud.google.com/).
-2. Create a new project and enable the Google Drive API.
-3. Set up OAuth 2.0 credentials and download the JSON credentials file.
-4. Configure the same as Auth Provider, External Credential, and Named Credentials into Salesforce.
+## Key Points to Note ⚠️
 
-### Set Up OpenAI API
-1. Visit [OpenAI's platform](https://platform.openai.com/api-keys) to create an account and obtain your API key.
-2. Configure the same as External Credential Named Credentials into Salesforce.
+1. **On File Upload/Insert**:
+   - All three objects—`ContentDocument`, `ContentVersion`, and `ContentDocumentLink`—triggers are fired.
 
-### Deploy the Apex Trigger and Class
-1. Use the Salesforce Developer Console or your IDE (VS Code, Illuminated Cloud) to deploy the provided Apex Trigger and class to your Salesforce Org.
+2. **On Uploading a New Version of a File**:
+   - Only the `ContentVersion` trigger is fired.
 
-### Watch the YouTube Video for the Demo
+3. **On Removing a File from a Record**:
+   - The `ContentDocumentLink` trigger is fired on deletion, identifying the related record using the `LinkedEntityId`.
 
-## How It Works
-This solution uses an Apex Trigger to handle the upload of files. The trigger processes all the files uploaded to Salesforce (such as documents or images), converts them into multipart-form data, and then uploads them simultaneously to both Google Drive and OpenAI Vector Store.
+4. **On Deleting a File from Salesforce**:
+   - Only the `ContentDocument` trigger is fired.
 
-### Flow of the Process:
-- **File Upload in Salesforce**: When a file is added to Salesforce (e.g., an attachment to a record or a new content version), the Apex Trigger is invoked.
-- **Multipart-form Data Creation**: The Apex code converts the file(s) into multipart-form format, suitable for uploading to external APIs.
-- **Parallel API Calls**: The Apex Trigger uses asynchronous processing (via @future or batch processing) to send the files to both Google Drive and OpenAI Vector Store.
-- **Error Handling**: If any file fails to upload, an error message is captured and logged for troubleshooting.
+---
+
+## Salesforce Documentation References
+- [ContentDocument, ContentVersion, and ContentDocumentLink Terminologies](https://help.salesforce.com/s/articleView?id=000393095&type=1)
+- [Trigger Behavior in Classic and Lightning Experience](https://help.salesforce.com/s/articleView?id=000381623&type=1)
+
+---
+
+## 📚 Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/IAm-RoyAnirban/Salesforce-File-System.git
+
+---
 
 ### Contributions
 Feel free to fork this repository and contribute by submitting issues or pull requests. If you encounter any issues or need additional features, please raise a GitHub issue.
 
+---
+
 ### License
-This project is licensed under the MIT License - see the [LICENSE file](https://github.com/IAm-RoyAnirban/Apex-Multipart-Upload/blob/main_branch/LICENSE) for more details.
+This project is licensed under the MIT License - see the [LICENSE file](https://github.com/IAm-RoyAnirban/Salesforce-Files-System/blob/main_branch/LICENSE) for more details.
