@@ -18,10 +18,11 @@ YouTube: [Master Salesforce File Management with Real-World Use Cases for Apex T
 This repository is designed for developers and Salesforce admins who want to:
 
 - **Understand relationships** between the `ContentDocument`, `ContentVersion`, and `ContentDocumentLink` objects: their fields, usage, and purpose.
-- Learn **Apex trigger-based scenarios** using SOQL queries to handle file uploads, updates, deletions, and record associations.
+- Learn **Apex trigger-based scenarios** for handling file uploads, updates, deletions, and record associations.
 - Explore **real-world use cases**, including:
+  - SOQL queries for retrieving records across various scenarios.
   - Querying all related files and their versions for any record using Flows.
-  - Previewing files in a data table.
+  - Previewing files and their versions in a data table.
   - Generating **secure, shareable links** with optional expiration dates and passwords for external access.
 
 ---
